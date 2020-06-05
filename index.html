@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>VzActSmart</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="Verizon.ico" type="image/x-icon">
+    <link rel="icon" href="Verizon.ico" type="image/x-icon">
+
+</head>
+
+<body id="top">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // var scrolltotop = { setting: { startline: 100, scrollto: 0, scrollduration: 1e3, fadeduration: [500, 100] }, controlHTML: '<img class="test" src="./images/B2.png" />', controlattrs: { offsetx: 5, offsety: 5 }, anchorkeyword: "#top", state: { isvisible: !1, shouldvisible: !1 }, scrollup: function () { this.cssfixedsupport || this.$control.css({ opacity: 0 }); var t = isNaN(this.setting.scrollto) ? this.setting.scrollto : parseInt(this.setting.scrollto); t = "string" == typeof t && 1 == jQuery("#" + t).length ? jQuery("#" + t).offset().top : 0, this.$body.animate({ scrollTop: t }, this.setting.scrollduration) }, keepfixed: function () { var t = jQuery(window), o = t.scrollLeft() + t.width() - this.$control.width() - this.controlattrs.offsetx, s = t.scrollTop() + t.height() - this.$control.height() - this.controlattrs.offsety; this.$control.css({ left: o + "px", top: s + "px" }) }, togglecontrol: function () { var t = jQuery(window).scrollTop(); this.cssfixedsupport || this.keepfixed(), this.state.shouldvisible = t >= this.setting.startline ? !0 : !1, this.state.shouldvisible && !this.state.isvisible ? (this.$control.stop().animate({ opacity: 1 }, this.setting.fadeduration[0]), this.state.isvisible = !0) : 0 == this.state.shouldvisible && this.state.isvisible && (this.$control.stop().animate({ opacity: 0 }, this.setting.fadeduration[1]), this.state.isvisible = !1) }, init: function () { jQuery(document).ready(function (t) { var o = scrolltotop, s = document.all; o.cssfixedsupport = !s || s && "CSS1Compat" == document.compatMode && window.XMLHttpRequest, o.$body = t(window.opera ? "CSS1Compat" == document.compatMode ? "html" : "body" : "html,body"), o.$control = t('<div id="topcontrol">' + o.controlHTML + "</div>").css({ position: o.cssfixedsupport ? "fixed" : "absolute", bottom: o.controlattrs.offsety, right: o.controlattrs.offsetx, opacity: 0, cursor: "pointer" }).attr({ title: "Scroll to Top" }).click(function () { return o.scrollup(), !1 }).appendTo("body"), document.all && !window.XMLHttpRequest && "" != o.$control.text() && o.$control.css({ width: o.$control.width() }), o.togglecontrol(), t('a[href="' + o.anchorkeyword + '"]').click(function () { return o.scrollup(), !1 }), t(window).bind("scroll resize", function (t) { o.togglecontrol() }) }) } }; scrolltotop.init();
+        var scrolltotop = { setting: { startline: 100, scrollto: 0, scrollduration: 1e3, fadeduration: [500, 100] }, controlHTML: '<img src="https://i1155.photobucket.com/albums/p559/scrolltotop/arrow7.png" />', controlattrs: { offsetx: 5, offsety: 5 }, anchorkeyword: "#top", state: { isvisible: !1, shouldvisible: !1 }, scrollup: function () { this.cssfixedsupport || this.$control.css({ opacity: 0 }); var t = isNaN(this.setting.scrollto) ? this.setting.scrollto : parseInt(this.setting.scrollto); t = "string" == typeof t && 1 == jQuery("#" + t).length ? jQuery("#" + t).offset().top : 0, this.$body.animate({ scrollTop: t }, this.setting.scrollduration) }, keepfixed: function () { var t = jQuery(window), o = t.scrollLeft() + t.width() - this.$control.width() - this.controlattrs.offsetx, s = t.scrollTop() + t.height() - this.$control.height() - this.controlattrs.offsety; this.$control.css({ left: o + "px", top: s + "px" }) }, togglecontrol: function () { var t = jQuery(window).scrollTop(); this.cssfixedsupport || this.keepfixed(), this.state.shouldvisible = t >= this.setting.startline ? !0 : !1, this.state.shouldvisible && !this.state.isvisible ? (this.$control.stop().animate({ opacity: 1 }, this.setting.fadeduration[0]), this.state.isvisible = !0) : 0 == this.state.shouldvisible && this.state.isvisible && (this.$control.stop().animate({ opacity: 0 }, this.setting.fadeduration[1]), this.state.isvisible = !1) }, init: function () { jQuery(document).ready(function (t) { var o = scrolltotop, s = document.all; o.cssfixedsupport = !s || s && "CSS1Compat" == document.compatMode && window.XMLHttpRequest, o.$body = t(window.opera ? "CSS1Compat" == document.compatMode ? "html" : "body" : "html,body"), o.$control = t('<div id="topcontrol">' + o.controlHTML + "</div>").css({ position: o.cssfixedsupport ? "fixed" : "absolute", bottom: o.controlattrs.offsety, right: o.controlattrs.offsetx, opacity: 0, cursor: "pointer" }).attr({ title: "Scroll to Top" }).click(function () { return o.scrollup(), !1 }).appendTo("body"), document.all && !window.XMLHttpRequest && "" != o.$control.text() && o.$control.css({ width: o.$control.width() }), o.togglecontrol(), t('a[href="' + o.anchorkeyword + '"]').click(function () { return o.scrollup(), !1 }), t(window).bind("scroll resize", function (t) { o.togglecontrol() }) }) } }; scrolltotop.init();
+
+        function check() {
+
+            swal("Device Failure!", "#STB>2 Issue Found", "error");
+            setTimeout(function createTicket() {
+                swal({
+                    title: "Create Trouble Ticket?",
+                    //text: "!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal("Creating ticket will take 5 to 6 seconds.Please wait!!!", {
+                                icon: "success",
+                            });
+                        } else {
+                            swal("Issue Logged!", { icon: "success" });
+
+                        }
+                    });
+            }, 5000);
+
+            setTimeout(function dispatch() {
+                swal({
+                    title: "Dispatch Main Technician",
+                    //text: "!",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                    .then((willDelete) => {
+                        if (willDelete) {
+                            swal("Tech Dispatched Successfully!!!", {
+                                icon: "success",
+                            });
+                        } else {
+                            swal("Issue Logged!", { icon: "success" });
+
+                        }
+                    });
+            }, 16000);
+        }
+
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                $("hide").hide();
+            });
+            $("#show").click(function () {
+                $("hide").show();
+            });
+        });
+    </script>
+
+    </script>
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- header 
+    ================================================== -->
+    <header class="s-header">
+
+        <div class="header-logo">
+            <a class="site-logo" href="index.html">
+                <img src="images/Logo.jpg" alt="Homepage">
+            </a>
+        </div>
+
+        <nav class="row header-nav-wrap wide">
+            <ul class="header-main-nav">
+                <li class="current">
+                    <a class="smoothscroll" href="#home" title="intro">Home</a>
+                </li>
+                <li>
+                    <a class="smoothscroll" href="#tool" title="Tool">Tool</a>
+                </li>
+            </ul>
+
+            <ul class="header-social">
+                <li>
+                    <a href="#0">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <a class="header-menu-toggle" href="#">
+            <span>Menu</span>
+        </a>
+    </header>
+    <!-- end header -->
+
+
+    <!-- home
+    ================================================== -->
+    <section id="home" class="s-home target-section">
+        <div class="home-image-part"></div>
+        <div class="home-content">
+            <div class="row home-content__main wide">
+                <h1>
+                    An Amazing App
+                    <br> That Does It All.
+                </h1>
+                <h3>
+                    We Are AWESOME !!!! Delivering extraordinary creations from the very beginning of the time!
+                </h3>
+                <div class="home-content__button">
+                    <a class="btn-video" href="" data-lity>
+                        <span class="video-icon"></span>
+                    </a>
+                    <a href="#tool" class="smoothscroll btn btn--primary btn--large">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            <!-- end home-content__main -->
+        </div>
+        <!-- end home-content -->
+    </section>
+    <!-- end s-home -->
+
+    <!-- tool
+    ================================================== -->
+    <section id="tool" class="s-pricing">
+
+
+        <div class="row  align-center" data-aos="">
+            <div class="col-full">
+                <h3 class="display-1">
+                    Historical Data Of Devices / Equipments
+                </h3>
+
+            </div>
+        </div>
+
+        <div class="upload-btn1-wrapper">
+            <button class="btn1" onclick="myFunction()">Upload</button>
+            <input type="file" name="myfile" />
+        </div>
+
+        <h2 class="align-center">Device Report</h2>
+
+        <div id="hide">
+            <table id="table1">
+                <tr>
+                    <th>DEVICE ID</th>
+                    <th>MODEL NO</th>
+                    <th>STB</th>
+                    <th>BHR</th>
+                    <th>ONT</th>
+                    <th>SPLITTER</th>
+                </tr>
+                <tr>
+                    <td>#7347594</td>
+                    <td>#A156J1568</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>Y</td>
+                </tr>
+                <tr>
+                    <td>#7275385</td>
+                    <td>#S749Z472</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>N</td>
+                </tr>
+                <tr>
+                    <td>#7340755</td>
+                    <td>#A736B723</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>Y</td>
+                </tr>
+                <tr>
+                    <td>#7093434</td>
+                    <td>#M03747S5</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                    <td>Y</td>
+                </tr>
+                <tr>
+                    <td>#7134953</td>
+                    <td>#T25493P2</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>N</td>
+                </tr>
+            </table>
+        </div>
+        <div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <a href="#LiveData" class="smoothscroll">
+                            <button class="btn btn-default">Submit</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Live Data -->
+    <section id="LiveData" class="s-pricing">
+
+
+        <div class="row  align-center" data-aos="">
+            <div class="col-full">
+                <h3 class="display-1">
+                    Live Data of Device
+                </h3>
+            </div>
+        </div>
+
+        <div class="upload-btn1-wrapper">
+            <button class="btn1">Upload</button>
+            <input type="file" name="myfile" />
+        </div>
+
+        <h2 class="align-center">Device Report</h2>
+
+        <div>
+            <table id="table2">
+                <tr>
+                    <th>DEVICE ID</th>
+                    <th>MODEL NO</th>
+                    <th>STB</th>
+                    <th>BHR</th>
+                    <th>ONT</th>
+                    <th>SPLITTER</th>
+                </tr>
+                <tr>
+                    <td>#7347594</td>
+                    <td>Iphone11 Pro</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>Y</td>
+                </tr>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <button class="btn btn-default" onclick="check()">Check Anomoly</button>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="js/main.js"></script>
+   
+    <!-- ==================================================  -->
+    <footer>
+        <div class="container">
+            <div class="text-center">Copyright © 2020 - VzActSmart One Touch Resolution</div>
+        </div>
+    </footer>
+    <!-- end s-footer -->
+
+</body>
+
+</html>
