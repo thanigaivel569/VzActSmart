@@ -10,5 +10,3 @@ Roopesh Cattamanchi
 LakshmiDeepak Boppudi
 
 Thanigaivel A
-
-
