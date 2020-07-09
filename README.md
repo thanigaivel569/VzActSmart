@@ -1,4 +1,3 @@
-Digital Shift Challenge
 ------------------------
 Team Name : TechnoCrats
 ------------------------
