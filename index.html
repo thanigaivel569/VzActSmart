@@ -32,7 +32,7 @@
 
 </head>
 
-<body id="top">
+<body onload="HideShow()" id="top">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
         var scrolltotop = { setting: { startline: 100, scrollto: 0, scrollduration: 1e3, fadeduration: [500, 100] }, controlHTML: '<img class="test" src="./images/B2.png" />', controlattrs: { offsetx: 5, offsety: 5 }, anchorkeyword: "#top", state: { isvisible: !1, shouldvisible: !1 }, scrollup: function () { this.cssfixedsupport || this.$control.css({ opacity: 0 }); var t = isNaN(this.setting.scrollto) ? this.setting.scrollto : parseInt(this.setting.scrollto); t = "string" == typeof t && 1 == jQuery("#" + t).length ? jQuery("#" + t).offset().top : 0, this.$body.animate({ scrollTop: t }, this.setting.scrollduration) }, keepfixed: function () { var t = jQuery(window), o = t.scrollLeft() + t.width() - this.$control.width() - this.controlattrs.offsetx, s = t.scrollTop() + t.height() - this.$control.height() - this.controlattrs.offsety; this.$control.css({ left: o + "px", top: s + "px" }) }, togglecontrol: function () { var t = jQuery(window).scrollTop(); this.cssfixedsupport || this.keepfixed(), this.state.shouldvisible = t >= this.setting.startline ? !0 : !1, this.state.shouldvisible && !this.state.isvisible ? (this.$control.stop().animate({ opacity: 1 }, this.setting.fadeduration[0]), this.state.isvisible = !0) : 0 == this.state.shouldvisible && this.state.isvisible && (this.$control.stop().animate({ opacity: 0 }, this.setting.fadeduration[1]), this.state.isvisible = !1) }, init: function () { jQuery(document).ready(function (t) { var o = scrolltotop, s = document.all; o.cssfixedsupport = !s || s && "CSS1Compat" == document.compatMode && window.XMLHttpRequest, o.$body = t(window.opera ? "CSS1Compat" == document.compatMode ? "html" : "body" : "html,body"), o.$control = t('<div id="topcontrol">' + o.controlHTML + "</div>").css({ position: o.cssfixedsupport ? "fixed" : "absolute", bottom: o.controlattrs.offsety, right: o.controlattrs.offsetx, opacity: 0, cursor: "pointer" }).attr({ title: "Scroll to Top" }).click(function () { return o.scrollup(), !1 }).appendTo("body"), document.all && !window.XMLHttpRequest && "" != o.$control.text() && o.$control.css({ width: o.$control.width() }), o.togglecontrol(), t('a[href="' + o.anchorkeyword + '"]').click(function () { return o.scrollup(), !1 }), t(window).bind("scroll resize", function (t) { o.togglecontrol() }) }) } }; scrolltotop.init();
@@ -42,7 +42,7 @@
             if (fileCondition == "Live_data 1.xlsx") {
                 swal({
                     title: "Device Failure!",
-                    text: "#STB>2 Issue Found",
+                    //text: "#STB>2 Issue Found",
                     icon: "error",
                     buttons: true,
                     dangerMode: true,
@@ -54,7 +54,7 @@
                         if (willDelete) {
                             swal(
                                 {
-                                    title: "Device Can Be Fixed With Reboot",
+                                    title: "Router Can Be Fixed With Reboot",
                                     buttons: true,
                                     dangerMode: true,
                                     buttons: ['Cancel', 'Proceed'],
@@ -98,7 +98,7 @@
                         if (willDelete) {
                             swal(
                                 {
-                                    title: "Device Cannot Be Fixed Automatically",
+                                    title: "Request Router Replacement",
                                     buttons: true,
                                     dangerMode: true,
                                     buttons: ['Cancel', 'Create Ticket'],
@@ -114,7 +114,7 @@
 
                 function deviceReboot_2() {
                     swal({
-                        title: "Ticket #7347594 Is Created With High Priority",
+                        title: "High Severity Defect Found! Ticket #7347594 Is Created With High Priority",
                         icon: "success"
                     })
                 }
@@ -144,7 +144,7 @@
                         if (willDelete) {
                             swal(
                                 {
-                                    title: "Customer Has To Self Troubleshoot",
+                                    title: "Customer Has To Update Factory Resetting",
                                     buttons: true,
                                     dangerMode: true,
                                     buttons: ['Cancel', 'Send Notification'],
@@ -174,7 +174,7 @@
                             if (willDelete) {
                                 swal(
                                     {
-                                        title: "Techsee Link Sent To Your Registered Mail",
+                                        title: "Techsee Link Sent To Customer Registered Mail",
                                         // buttons: true,
                                         // dangerMode: true,
                                         //buttons: ['Cancel', 'Send Notification'],
@@ -198,13 +198,54 @@
             }
         }
         var fileCondition = ""
-        function showname() {
-            var name = document.getElementById('fileInput');
-            fileCondition = name.files.item(0).name;
-            console.log(fileCondition);
+
+
+        function HideShow() {
+
+            document.getElementById("HD").style.display = "none";
+            document.getElementById("HD1").style.display = "none";
+            document.getElementById("LD").style.display = "none";
+            document.getElementById("LD1").style.display = "none";
+        }
+
+        function ShowHD() {
+
+            document.getElementById("HD").style.display = "block";
+            document.getElementById("HD1").style.display = "block";
         }
 
 
+        function ShowLD() {
+
+            document.getElementById("LD").style.display = "block";
+            document.getElementById("LD1").style.display = "block";
+
+            var name = document.getElementById('fileInput');
+            fileCondition = name.files.item(0).name;
+            console.log(fileCondition);
+            if (fileCondition == "Live_data 1.xlsx") {
+                document.getElementById("Live_data 1.xlsx").style.display = "block";
+                document.getElementById("Live_data 2.xlsx").style.display = "none";
+                document.getElementById("Live_data 3.xlsx").style.display = "none";
+
+            }
+
+            if (fileCondition == "Live_data 2.xlsx") {
+                document.getElementById("Live_data 2.xlsx").style.display = "block";
+                document.getElementById("Live_data 1.xlsx").style.display = "none";
+                document.getElementById("Live_data 3.xlsx").style.display = "none";
+
+            }
+
+            if (fileCondition == "Live_data 3.xlsx") {
+                document.getElementById("Live_data 3.xlsx").style.display = "block";
+                document.getElementById("Live_data 1.xlsx").style.display = "none";
+                document.getElementById("Live_data 2.xlsx").style.display = "none";
+
+            }
+
+
+        }
     </script>
 
     </script>
@@ -301,73 +342,74 @@
         </div>
 
         <div class="upload-btn1-wrapper">
-            <button class="btn1" onclick="myFunction()">Upload</button>
-            <input type="file" name="myfile" />
+            <button class="btn1">Upload</button>
+            <input type="file" onchange="ShowHD()" name="myfile" />
         </div>
+        <div id="HD">
+            <h2 class="align-center">Device Report</h2>
 
-        <h2 class="align-center">Device Report</h2>
-
-        <div id="hide">
-            <table id="table1">
-                <tr>
-                    <th>SERIAL NO</th>
-                    <th>MODEL NO</th>
-                    <th>CPE TYPE</th>
-                    <th>STB</th>
-                    <th>BHR</th>
-                    <th>ONT</th>
-                    <th>SPLITTER</th>
-                </tr>
-                <tr>
-                    <td>#7347594</td>
-                    <td>A156J158</td>
-                    <td>ROUTER</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>5</td>
-                    <td>Y</td>
-                </tr>
-                <tr>
-                    <td>#7275385</td>
-                    <td>S749Z472</td>
-                    <td>SETTOPBOX</td>
-                    <td>1</td>
-                    <td>4</td>
-                    <td>2</td>
-                    <td>N</td>
-                </tr>
-                <tr>
-                    <td>#7340755</td>
-                    <td>A736B723</td>
-                    <td>CABLECARD</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>3</td>
-                    <td>Y</td>
-                </tr>
-                <tr>
-                    <td>#7093434</td>
-                    <td>M03747S5</td>
-                    <td>ROUTER</td>
-                    <td>2</td>
-                    <td>4</td>
-                    <td>2</td>
-                    <td>Y</td>
-                </tr>
-                <tr>
-                    <td>#7134953</td>
-                    <td>T25493P2</td>
-                    <td>CABLECARD</td>
-                    <td>2</td>
-                    <td>2</td>
-                    <td>5</td>
-                    <td>N</td>
-                </tr>
-            </table>
+            <div id="hide">
+                <table id="table1">
+                    <tr>
+                        <th>SERIAL NO</th>
+                        <th>MODEL NO</th>
+                        <th>CPE TYPE</th>
+                        <th>STB</th>
+                        <th>BHR</th>
+                        <th>ONT</th>
+                        <th>SPLITTER</th>
+                    </tr>
+                    <tr>
+                        <td>#7347594</td>
+                        <td>A156J158</td>
+                        <td>ROUTER</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>Y</td>
+                    </tr>
+                    <tr>
+                        <td>#7275385</td>
+                        <td>S749Z472</td>
+                        <td>SETTOPBOX</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>N</td>
+                    </tr>
+                    <tr>
+                        <td>#7340755</td>
+                        <td>A736B723</td>
+                        <td>ROUTER</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>Y</td>
+                    </tr>
+                    <tr>
+                        <td>#7093434</td>
+                        <td>M03747S5</td>
+                        <td>CABLECARD</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>Y</td>
+                    </tr>
+                    <tr>
+                        <td>#7134953</td>
+                        <td>T25493P2</td>
+                        <td>SETTOPBOX</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>N</td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <div>
 
-            <div class="container">
+            <div class="container" id="HD1">
                 <div class="row">
                     <div class="col text-center">
                         <a href="#LiveData" class="smoothscroll">
@@ -392,36 +434,85 @@
 
         <div class="upload-btn1-wrapper">
             <button class="btn1">Upload</button>
-            <input type="file" id="fileInput" onchange="showname()" name="myfile" />
+            <input type="file" id="fileInput" onchange="ShowLD()" name="myfile" />
         </div>
+        <div id="LD">
+            <h2 class="align-center">Device Report</h2>
 
-        <h2 class="align-center">Device Report</h2>
+            <div id="Live_data 1.xlsx">
+                <table id="table2">
+                    <tr>
+                        <th>SERIAL NO</th>
+                        <th>MODEL NO</th>
+                        <th>CPE TYPE</th>
+                        <th>STB</th>
+                        <th>BHR</th>
+                        <th>ONT</th>
+                        <th>SPLITTER</th>
+                    </tr>
+                    <tr>
+                        <td>#7340755</td>
+                        <td>A736B723</td>
+                        <td>ROUTER</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>Y</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="Live_data 2.xlsx">
+                <table id="table2">
+                    <tr>
+                        <th>SERIAL NO</th>
+                        <th>MODEL NO</th>
+                        <th>CPE TYPE</th>
+                        <th>STB</th>
+                        <th>BHR</th>
+                        <th>ONT</th>
+                        <th>SPLITTER</th>
+                    </tr>
+                    <tr>
+                        <td>#7347594</td>
+                        <td>A156J158</td>
+                        <td>ROUTER</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td>Y</td>
+                    </tr>
 
-        <div>
-            <table id="table2">
-                <tr>
-                    <th>SERIAL NO</th>
-                    <th>MODEL NO</th>
-                    <th>CPE TYPE</th>
-                    <th>STB</th>
-                    <th>BHR</th>
-                    <th>ONT</th>
-                    <th>SPLITTER</th>
-                </tr>
-                <tr>
-                    <td>#7347594</td>
-                    <td>A106B723</td>
-                    <td>ROUTER</td>
-                    <td>4</td>
-                    <td>3</td>
-                    <td>1</td>
-                    <td>Y</td>
-                </tr>
-                </tr>
-            </table>
+                </table>
+            </div>
+
+            <div id="Live_data 3.xlsx">
+                <table id="table2">
+                    <tr>
+                        <th>SERIAL NO</th>
+                        <th>MODEL NO</th>
+                        <th>CPE TYPE</th>
+                        <th>STB</th>
+                        <th>BHR</th>
+                        <th>ONT</th>
+                        <th>SPLITTER</th>
+                    </tr>
+                    <tr>
+                        <td>#7275385</td>
+                        <td>S749Z472</td>
+                        <td>SETTOPBOX</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>N</td>
+                    </tr>
+
+
+                </table>
+            </div>
+
         </div>
         <div>
-            <div class="container">
+            <div class="container" id="LD1">
                 <div class="row">
                     <div class="col text-center">
                         <button class="btn btn-default" onclick="check()">Check Anomoly</button>
